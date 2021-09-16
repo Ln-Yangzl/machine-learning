@@ -28,7 +28,7 @@ def loadMNIST(path:str = ''):
         yTest = readLables(f)
         print('complete')
     f.close()
-    return xTrain, yTrain, xTest, yTest
+    return xTrain, xTest, yTrain, yTest
 
 
 def readImages(file:BufferedReader):
@@ -57,4 +57,4 @@ def readLables(file:BufferedReader):
     return np.asarray(res)
 
 
-loadMNIST('data/')
+# loadMNIST('data/')
