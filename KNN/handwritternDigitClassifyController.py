@@ -8,11 +8,11 @@ BATCH_SIZE = 10
 knn = KNNclassifier(neighbors=10, compute=lambda x,y:(x-y)*(x-y))
 
 xTrain, xTest, yTrain, yTest = loadMNIST(DATA_PATH)
-knn.fit(xTrain, yTrain)
+knn.fit(xTrain[:1000], yTrain[:1000])
 index = 0
 record = 0.0
-while index + BATCH_SIZE < len(xTest):
-    end = index + BATCH_SIZE - 1
+while index + BATCH_SIZE <= len(xTest):
+    end = index + BATCH_SIZE 
     print('batch: ', index, '----', end)
     yPred = knn.predict(xTest[index:end])
     current = np.mean(yPred == yTest[index:end])
