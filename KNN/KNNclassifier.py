@@ -31,12 +31,14 @@ class KNNclassifier:
         cont = [0]*len(self.y)
         max = 0
         maxY = 0
+        # print(vector.data)
         for i in vector.data:
             currentY = i[-1]
             cont[currentY] += 1
             if cont[currentY] > max:
                 max = cont[currentY]
                 maxY = currentY
+        # print(maxY)
 
         return maxY
 
