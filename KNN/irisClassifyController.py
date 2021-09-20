@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from KNNclassifier import KNNclassifier
 import numpy as np
 
-testNums = 20
+testNums = 10
 
 iris = datasets.load_iris()
 x = iris.data
